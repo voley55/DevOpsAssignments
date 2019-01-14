@@ -24,7 +24,7 @@ Example: redis-cli -p 6379 set ping pong and redis-cli get ping
 substitute solution.  
 
 
-## Problem statement 2: ( 3 marks )    
+## Problem statement 2:     
 Impressive !! But this doesn't end here, the same guy comes back and this time his application is failing to find
 the keys on the slave which are present on the master. Help him debug the issue.  
 
