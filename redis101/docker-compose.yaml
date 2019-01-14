@@ -1,0 +1,19 @@
+version: "3"
+services:
+  master:
+    image: voley/training/redis_master:2018
+    ports:
+      - "6379:6379"
+    command: '/data/redis/redis.conf'
+  slave:
+    image: voley/training/redis_slave:2018
+    ports:
+      - "6380:6380"
+    command: '/data/redis/redis.conf'
+    links:
+      - "master:redismaster"
+  app:
+    image: voley/training/redis_app:2018
+    links:
+      - "master:redismaster"
+      - "slave:redisslave"
